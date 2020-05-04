@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Main
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Main
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.lblInput = New System.Windows.Forms.Label()
@@ -41,11 +41,9 @@ Partial Class Main
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddDisplayConstantsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HowToUseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExistingDisplayPropertiesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -212,17 +210,10 @@ Partial Class Main
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddDisplayConstantsToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
-        '
-        'AddDisplayConstantsToolStripMenuItem
-        '
-        Me.AddDisplayConstantsToolStripMenuItem.Enabled = False
-        Me.AddDisplayConstantsToolStripMenuItem.Name = "AddDisplayConstantsToolStripMenuItem"
-        Me.AddDisplayConstantsToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.AddDisplayConstantsToolStripMenuItem.Text = "Add Display Constants"
         '
         'ExitToolStripMenuItem
         '
@@ -232,7 +223,7 @@ Partial Class Main
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HowToUseToolStripMenuItem, Me.ExistingDisplayPropertiesToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HowToUseToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
@@ -242,13 +233,6 @@ Partial Class Main
         Me.HowToUseToolStripMenuItem.Name = "HowToUseToolStripMenuItem"
         Me.HowToUseToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
         Me.HowToUseToolStripMenuItem.Text = "How To Use"
-        '
-        'ExistingDisplayPropertiesToolStripMenuItem
-        '
-        Me.ExistingDisplayPropertiesToolStripMenuItem.Enabled = False
-        Me.ExistingDisplayPropertiesToolStripMenuItem.Name = "ExistingDisplayPropertiesToolStripMenuItem"
-        Me.ExistingDisplayPropertiesToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
-        Me.ExistingDisplayPropertiesToolStripMenuItem.Text = "Existing Display Properties"
         '
         'StatusStrip1
         '
@@ -303,10 +287,8 @@ Partial Class Main
     Friend WithEvents btnUpdate As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AddDisplayConstantsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents HowToUseToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExistingDisplayPropertiesToolStripMenuItem As ToolStripMenuItem
 End Class
