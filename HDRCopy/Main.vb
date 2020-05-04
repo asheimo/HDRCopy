@@ -193,7 +193,7 @@ Public Class Main
     End Sub
 
     Private Sub HowToUseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HowToUseToolStripMenuItem.Click
-
+        HowToUse.Show()
     End Sub
 
     Private Sub ExistingDisplayPropertiesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExistingDisplayPropertiesToolStripMenuItem.Click

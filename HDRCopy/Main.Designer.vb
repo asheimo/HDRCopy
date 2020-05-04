@@ -239,7 +239,6 @@ Partial Class Main
         '
         'HowToUseToolStripMenuItem
         '
-        Me.HowToUseToolStripMenuItem.Enabled = False
         Me.HowToUseToolStripMenuItem.Name = "HowToUseToolStripMenuItem"
         Me.HowToUseToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
         Me.HowToUseToolStripMenuItem.Text = "How To Use"

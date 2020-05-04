@@ -94,6 +94,12 @@
     <Compile Include="AddDisplayProperty.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="HowToUse.Designer.vb">
+      <DependentUpon>HowToUse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HowToUse.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main.Designer.vb">
       <DependentUpon>Main.vb</DependentUpon>
     </Compile>
@@ -121,14 +127,17 @@
     <EmbeddedResource Include="AddDisplayProperty.resx">
       <DependentUpon>AddDisplayProperty.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HowToUse.resx">
+      <DependentUpon>HowToUse.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +163,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
