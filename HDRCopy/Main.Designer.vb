@@ -219,6 +219,7 @@ Partial Class Main
         '
         'AddDisplayConstantsToolStripMenuItem
         '
+        Me.AddDisplayConstantsToolStripMenuItem.Enabled = False
         Me.AddDisplayConstantsToolStripMenuItem.Name = "AddDisplayConstantsToolStripMenuItem"
         Me.AddDisplayConstantsToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
         Me.AddDisplayConstantsToolStripMenuItem.Text = "Add Display Constants"
@@ -238,12 +239,14 @@ Partial Class Main
         '
         'HowToUseToolStripMenuItem
         '
+        Me.HowToUseToolStripMenuItem.Enabled = False
         Me.HowToUseToolStripMenuItem.Name = "HowToUseToolStripMenuItem"
         Me.HowToUseToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
         Me.HowToUseToolStripMenuItem.Text = "How To Use"
         '
         'ExistingDisplayPropertiesToolStripMenuItem
         '
+        Me.ExistingDisplayPropertiesToolStripMenuItem.Enabled = False
         Me.ExistingDisplayPropertiesToolStripMenuItem.Name = "ExistingDisplayPropertiesToolStripMenuItem"
         Me.ExistingDisplayPropertiesToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
         Me.ExistingDisplayPropertiesToolStripMenuItem.Text = "Existing Display Properties"
@@ -256,7 +259,7 @@ Partial Class Main
         Me.StatusStrip1.TabIndex = 11
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'Form2
+        'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -269,7 +272,7 @@ Partial Class Main
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "Form2"
+        Me.Name = "Main"
         Me.Text = "Form2"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
