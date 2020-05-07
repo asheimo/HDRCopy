@@ -166,26 +166,27 @@ Public Class Main
 
         ElseIf Trim(Split(lbxDetailsInput.Items(0).ToString, ":")(1)) = "Display P3" Then
             strArguments &= " --set chromaticity-coordinates-red-x=" & P3D65Display_xR _
-            & " --set chromaticity-coordinates-red-y=" & P3D65Display_yR _
-            & " --set chromaticity-coordinates-green-x=" & P3D65Display_xG _
-            & " --set chromaticity-coordinates-green-y=" & P3D65Display_yG _
-            & " --set chromaticity-coordinates-blue-x=" & P3D65Display_xB _
-            & " --set chromaticity-coordinates-blue-y=" & P3D65Display_yB _
-            & " --set white-coordinates-x=" & P3D65Display_xW _
-            & " --set white-coordinates-y=" & P3D65Display_yW
+                & " --set chromaticity-coordinates-red-y=" & P3D65Display_yR _
+                & " --set chromaticity-coordinates-green-x=" & P3D65Display_xG _
+                & " --set chromaticity-coordinates-green-y=" & P3D65Display_yG _
+                & " --set chromaticity-coordinates-blue-x=" & P3D65Display_xB _
+                & " --set chromaticity-coordinates-blue-y=" & P3D65Display_yB _
+                & " --set white-coordinates-x=" & P3D65Display_xW _
+                & " --set white-coordinates-y=" & P3D65Display_yW
         Else
             MsgBox("Unknown colour space: " & Trim(Split(lbxDetailsInput.Items(0).ToString, ":")(1)), vbExclamation, "Error - Can Not Continue")
             Exit Sub
         End If
-        strArguments &= " --set max-luminance=" & Split(Trim(Split(lbxDetailsInput.Items(1), ":")(2)), " ")(0) _
-                & " --set min-luminance=" & Split(Trim(Split(lbxDetailsInput.Items(1), ":")(3)), " ")(0) _
-                & " --set max-content-light=" & Split(Trim(Split(lbxDetailsInput.Items(2).ToString, ":")(1)), " ")(0) _
+
+        strArguments &= " --set min-luminance=" & Split(Trim(Split(lbxDetailsInput.Items(1), ":")(2)), " ")(0) _
+                & " --set max-luminance=" & Split(Trim(Split(lbxDetailsInput.Items(1), ":")(3)), " ")(0)
+
+        If Split(Trim(Split(lbxDetailsInput.Items(2).ToString, ":")(1)), " ")(0) <> "" Then
+            strArguments &= " --set max-content-light=" & Split(Trim(Split(lbxDetailsInput.Items(2).ToString, ":")(1)), " ")(0) _
                 & " --set max-frame-light=" & Split(Trim(Split(lbxDetailsInput.Items(3).ToString, ":")(1)), " ")(0)
+        End If
+
         WriteData(strArguments)
-    End Sub
-
-    Private Sub AddDisplayConstantsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddDisplayConstantsToolStripMenuItem.Click
-
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -194,10 +195,6 @@ Public Class Main
 
     Private Sub HowToUseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HowToUseToolStripMenuItem.Click
         HowToUse.Show()
-    End Sub
-
-    Private Sub ExistingDisplayPropertiesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExistingDisplayPropertiesToolStripMenuItem.Click
-
     End Sub
 End Class
 
