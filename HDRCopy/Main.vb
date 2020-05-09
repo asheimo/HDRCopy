@@ -38,18 +38,6 @@ Public Class Main
 
     Private Sub btnInput_Click(sender As Object, e As EventArgs) Handles btnInput.Click
         lbxDetailsInput.Items.Clear()
-        'OpenFileDialog1.FileName = "Select an Input HDR Movie"
-        'OpenFileDialog1.Filter = "Matroska files (*.mkv)|*.mkv"
-        'OpenFileDialog1.Title = "Open Input HDR file"
-        'If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
-        '    Try
-        '        Dim strFilePath = OpenFileDialog1.FileName
-        '        tbxInput.Text = strFilePath
-        '        Extract(strFilePath, 0)
-        '    Catch ex As SecurityException
-        '        MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" & $"Details:\n\n{ex.StackTrace}")
-        '    End Try
-        'End If
         If (FolderBrowserDialog1.ShowDialog() = DialogResult.OK) Then
             lbxInputFolder.Items.Clear()
             lblInput.Text = "Input Folder: "
@@ -62,18 +50,6 @@ Public Class Main
 
     Private Sub btnOutput_Click(sender As Object, e As EventArgs) Handles btnOutput.Click
         lbxDetailsOutput.Items.Clear()
-        'OpenFileDialog1.FileName = "Select an Output HDR Movie"
-        'OpenFileDialog1.Filter = "Matroska files (*.mkv)|*.mkv"
-        'OpenFileDialog1.Title = "Open Output HDR file"
-        'If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
-        '    Try
-        '        Dim strFilePath = OpenFileDialog1.FileName
-        '        tbxOutput.Text = strFilePath
-        '        Extract(strFilePath, 1)
-        '    Catch ex As SecurityException
-        '        MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" & $"Details:\n\n{ex.StackTrace}")
-        '    End Try
-        'End If
         If (FolderBrowserDialog1.ShowDialog() = DialogResult.OK) Then
             lbxOutputFolder.Items.Clear()
             lblOutput.Text = "Output Folder: "
@@ -85,9 +61,18 @@ Public Class Main
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Insert(lbxOutputFolder.SelectedItem)
-        lbxDetailsOutput.Items.Clear()
-        Extract(lbxOutputFolder.SelectedItem, 1)
+        Try
+            For Each Pair As KeyValuePair(Of String, String) In dictOutput
+                If Pair.Key = lbxOutputFolder.SelectedItem Then
+                    Insert(Pair.Value)
+                    lbxDetailsOutput.Items.Clear()
+                    Extract(Pair.Value, 1)
+                    Exit For
+                End If
+            Next
+        Catch ex As SecurityException
+            MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" & $"Details:\n\n{ex.StackTrace}")
+        End Try
     End Sub
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
