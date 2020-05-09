@@ -25,12 +25,10 @@ Partial Class Main
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.lblInput = New System.Windows.Forms.Label()
         Me.btnInput = New System.Windows.Forms.Button()
-        Me.tbxInput = New System.Windows.Forms.TextBox()
         Me.lbxDetailsInput = New System.Windows.Forms.ListBox()
         Me.lblDetailsInput = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.tbxOutput = New System.Windows.Forms.TextBox()
         Me.lblDetailsOutput = New System.Windows.Forms.Label()
         Me.lblOutput = New System.Windows.Forms.Label()
         Me.lbxDetailsOutput = New System.Windows.Forms.ListBox()
@@ -45,6 +43,9 @@ Partial Class Main
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HowToUseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.lbxInputFolder = New System.Windows.Forms.ListBox()
+        Me.lbxOutputFolder = New System.Windows.Forms.ListBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -58,40 +59,34 @@ Partial Class Main
         '
         Me.lblInput.AutoSize = True
         Me.lblInput.Location = New System.Drawing.Point(7, 18)
+        Me.lblInput.MaximumSize = New System.Drawing.Size(247, 13)
         Me.lblInput.Name = "lblInput"
-        Me.lblInput.Size = New System.Drawing.Size(53, 13)
+        Me.lblInput.Size = New System.Drawing.Size(69, 13)
         Me.lblInput.TabIndex = 0
-        Me.lblInput.Text = "Input File:"
+        Me.lblInput.Text = "Input Folder: "
         '
         'btnInput
         '
-        Me.btnInput.Location = New System.Drawing.Point(6, 60)
+        Me.btnInput.Location = New System.Drawing.Point(6, 34)
         Me.btnInput.Name = "btnInput"
-        Me.btnInput.Size = New System.Drawing.Size(75, 23)
+        Me.btnInput.Size = New System.Drawing.Size(90, 23)
         Me.btnInput.TabIndex = 1
-        Me.btnInput.Text = "Select"
+        Me.btnInput.Text = "Select Folder"
         Me.btnInput.UseVisualStyleBackColor = True
-        '
-        'tbxInput
-        '
-        Me.tbxInput.Location = New System.Drawing.Point(6, 34)
-        Me.tbxInput.Name = "tbxInput"
-        Me.tbxInput.Size = New System.Drawing.Size(247, 20)
-        Me.tbxInput.TabIndex = 2
         '
         'lbxDetailsInput
         '
         Me.lbxDetailsInput.FormattingEnabled = True
         Me.lbxDetailsInput.HorizontalScrollbar = True
-        Me.lbxDetailsInput.Location = New System.Drawing.Point(6, 134)
+        Me.lbxDetailsInput.Location = New System.Drawing.Point(6, 173)
         Me.lbxDetailsInput.Name = "lbxDetailsInput"
-        Me.lbxDetailsInput.Size = New System.Drawing.Size(247, 121)
+        Me.lbxDetailsInput.Size = New System.Drawing.Size(247, 82)
         Me.lbxDetailsInput.TabIndex = 3
         '
         'lblDetailsInput
         '
         Me.lblDetailsInput.AutoSize = True
-        Me.lblDetailsInput.Location = New System.Drawing.Point(6, 118)
+        Me.lblDetailsInput.Location = New System.Drawing.Point(6, 156)
         Me.lblDetailsInput.Name = "lblDetailsInput"
         Me.lblDetailsInput.Size = New System.Drawing.Size(42, 13)
         Me.lblDetailsInput.TabIndex = 4
@@ -99,11 +94,11 @@ Partial Class Main
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.tbxInput)
         Me.GroupBox1.Controls.Add(Me.lblDetailsInput)
         Me.GroupBox1.Controls.Add(Me.lblInput)
         Me.GroupBox1.Controls.Add(Me.lbxDetailsInput)
         Me.GroupBox1.Controls.Add(Me.btnInput)
+        Me.GroupBox1.Controls.Add(Me.lbxInputFolder)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 32)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(259, 276)
@@ -113,11 +108,11 @@ Partial Class Main
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.tbxOutput)
         Me.GroupBox2.Controls.Add(Me.lblDetailsOutput)
         Me.GroupBox2.Controls.Add(Me.lblOutput)
         Me.GroupBox2.Controls.Add(Me.lbxDetailsOutput)
         Me.GroupBox2.Controls.Add(Me.btnOutput)
+        Me.GroupBox2.Controls.Add(Me.lbxOutputFolder)
         Me.GroupBox2.Location = New System.Drawing.Point(301, 32)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(259, 276)
@@ -125,17 +120,10 @@ Partial Class Main
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "GroupBox2"
         '
-        'tbxOutput
-        '
-        Me.tbxOutput.Location = New System.Drawing.Point(6, 34)
-        Me.tbxOutput.Name = "tbxOutput"
-        Me.tbxOutput.Size = New System.Drawing.Size(247, 20)
-        Me.tbxOutput.TabIndex = 2
-        '
         'lblDetailsOutput
         '
         Me.lblDetailsOutput.AutoSize = True
-        Me.lblDetailsOutput.Location = New System.Drawing.Point(6, 118)
+        Me.lblDetailsOutput.Location = New System.Drawing.Point(6, 156)
         Me.lblDetailsOutput.Name = "lblDetailsOutput"
         Me.lblDetailsOutput.Size = New System.Drawing.Size(42, 13)
         Me.lblDetailsOutput.TabIndex = 4
@@ -145,27 +133,28 @@ Partial Class Main
         '
         Me.lblOutput.AutoSize = True
         Me.lblOutput.Location = New System.Drawing.Point(7, 18)
+        Me.lblOutput.MaximumSize = New System.Drawing.Size(247, 13)
         Me.lblOutput.Name = "lblOutput"
-        Me.lblOutput.Size = New System.Drawing.Size(61, 13)
+        Me.lblOutput.Size = New System.Drawing.Size(77, 13)
         Me.lblOutput.TabIndex = 0
-        Me.lblOutput.Text = "Output File:"
+        Me.lblOutput.Text = "Output Folder: "
         '
         'lbxDetailsOutput
         '
         Me.lbxDetailsOutput.FormattingEnabled = True
         Me.lbxDetailsOutput.HorizontalScrollbar = True
-        Me.lbxDetailsOutput.Location = New System.Drawing.Point(6, 134)
+        Me.lbxDetailsOutput.Location = New System.Drawing.Point(6, 173)
         Me.lbxDetailsOutput.Name = "lbxDetailsOutput"
-        Me.lbxDetailsOutput.Size = New System.Drawing.Size(247, 121)
+        Me.lbxDetailsOutput.Size = New System.Drawing.Size(247, 82)
         Me.lbxDetailsOutput.TabIndex = 3
         '
         'btnOutput
         '
-        Me.btnOutput.Location = New System.Drawing.Point(6, 60)
+        Me.btnOutput.Location = New System.Drawing.Point(6, 34)
         Me.btnOutput.Name = "btnOutput"
-        Me.btnOutput.Size = New System.Drawing.Size(75, 23)
+        Me.btnOutput.Size = New System.Drawing.Size(90, 23)
         Me.btnOutput.TabIndex = 1
-        Me.btnOutput.Text = "Select"
+        Me.btnOutput.Text = "Select Folder"
         Me.btnOutput.UseVisualStyleBackColor = True
         '
         'OpenFileDialog2
@@ -218,7 +207,7 @@ Partial Class Main
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(93, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'HelpToolStripMenuItem
@@ -231,7 +220,7 @@ Partial Class Main
         'HowToUseToolStripMenuItem
         '
         Me.HowToUseToolStripMenuItem.Name = "HowToUseToolStripMenuItem"
-        Me.HowToUseToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
+        Me.HowToUseToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
         Me.HowToUseToolStripMenuItem.Text = "How To Use"
         '
         'StatusStrip1
@@ -241,6 +230,24 @@ Partial Class Main
         Me.StatusStrip1.Size = New System.Drawing.Size(574, 22)
         Me.StatusStrip1.TabIndex = 11
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'lbxInputFolder
+        '
+        Me.lbxInputFolder.FormattingEnabled = True
+        Me.lbxInputFolder.HorizontalScrollbar = True
+        Me.lbxInputFolder.Location = New System.Drawing.Point(6, 64)
+        Me.lbxInputFolder.Name = "lbxInputFolder"
+        Me.lbxInputFolder.Size = New System.Drawing.Size(247, 82)
+        Me.lbxInputFolder.TabIndex = 5
+        '
+        'lbxOutputFolder
+        '
+        Me.lbxOutputFolder.FormattingEnabled = True
+        Me.lbxOutputFolder.HorizontalScrollbar = True
+        Me.lbxOutputFolder.Location = New System.Drawing.Point(6, 64)
+        Me.lbxOutputFolder.Name = "lbxOutputFolder"
+        Me.lbxOutputFolder.Size = New System.Drawing.Size(247, 82)
+        Me.lbxOutputFolder.TabIndex = 6
         '
         'Main
         '
@@ -271,12 +278,10 @@ Partial Class Main
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents lblInput As Label
     Friend WithEvents btnInput As Button
-    Friend WithEvents tbxInput As TextBox
     Friend WithEvents lbxDetailsInput As ListBox
     Friend WithEvents lblDetailsInput As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents tbxOutput As TextBox
     Friend WithEvents lblDetailsOutput As Label
     Friend WithEvents lblOutput As Label
     Friend WithEvents lbxDetailsOutput As ListBox
@@ -291,4 +296,7 @@ Partial Class Main
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents HowToUseToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Friend WithEvents lbxInputFolder As ListBox
+    Friend WithEvents lbxOutputFolder As ListBox
 End Class
